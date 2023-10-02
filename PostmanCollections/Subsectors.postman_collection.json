@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "2583f57e-3b78-480c-9b16-2771cceb9329",
+		"name": "Subsectors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29770698"
+	},
+	"item": [
+		{
+			"name": "Subsectors of particular sector",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/sectors/subsectors?sector=Industrials",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"subsectors"
+					],
+					"query": [
+						{
+							"key": "sector",
+							"value": "Industrials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subsectors of particular sector invalid  sector name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/sectors/subsectors?sector=abcd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"subsectors"
+					],
+					"query": [
+						{
+							"key": "sector",
+							"value": "abcd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subsectors of particular sector System error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {\r",
+							"  pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/sectors/subsectors?sector=Health Care",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"subsectors"
+					],
+					"query": [
+						{
+							"key": "sector",
+							"value": "Health Care"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subsectors of particular sector Authorization Check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"  pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/sectors/subsectors?sector=Health Care",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"subsectors"
+					],
+					"query": [
+						{
+							"key": "sector",
+							"value": "Health Care"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
