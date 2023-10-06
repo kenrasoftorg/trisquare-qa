@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "6074445b-9773-4011-9e5c-b83dc4b609aa",
+		"name": "Sectors_subsectors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29549878"
+	},
+	"item": [
+		{
+			"name": "List of sectors and subsectors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/subsectors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"subsectors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Subsectors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/dftrenjkiol/subsectors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"dftrenjkiol",
+						"subsectors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
