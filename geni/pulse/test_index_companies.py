@@ -1,8 +1,8 @@
 import pytest
 import requests
 
-
-def test_number_of_rows(database_connection):
+@pytest.mark.TRISQUARE_3
+def test_load_SP500_stocks(database_connection):
     cursor = database_connection.cursor()
     cursor.execute("SELECT COUNT(*) FROM SP500")
     count = cursor.fetchone()[0]

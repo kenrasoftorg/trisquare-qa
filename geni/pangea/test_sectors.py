@@ -1,8 +1,8 @@
 import pytest
 import requests
 
-
-def test_sectors_api(pulse_url):
+@pytest.mark.TRISQUARE_1
+def test_fetch_sectors_api(pulse_url):
     api = f"{pulse_url}/sectors"
     response = requests.get(api) # Displays all sectors names
 
