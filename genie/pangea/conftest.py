@@ -1,5 +1,4 @@
 import pytest
-import requests
 
 @pytest.fixture()
 def dev_environment():
@@ -11,7 +10,7 @@ def dev_environment():
         "port": port,
     }
 
-
 @pytest.fixture(autouse=True)
 def pulse_url(dev_environment):
     return f"http://{dev_environment['host']}:{dev_environment['port']}"
+
