@@ -1,11 +1,6 @@
 import pytest
 import requests
 
-# Define custom markers
-pytest.mark.TRISQUARE_1 = pytest.mark.marker
-pytest.mark.TRISQUARE_22 = pytest.mark.marker
-
-
 @pytest.fixture()
 def dev_environment():
     host = "localhost"

@@ -2,6 +2,7 @@ import pytest
 import requests
 
 @pytest.mark.TRISQUARE_1
+@pytest.mark.Regression
 def test_fetch_sectors_api(pulse_url):
     api = f"{pulse_url}/sectors"
     response = requests.get(api) # Displays all sectors names
