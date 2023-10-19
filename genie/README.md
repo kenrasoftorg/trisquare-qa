@@ -6,4 +6,4 @@
 | pytest .\pangea\test_sectors.py | Execute a specific module |
 | pytest .\test_sectors.py::test_fetch_sectors_api | Execute a specific test case |
 | pytest -vs | v-Verbose and s-displays the print statements  |
-| pytest -k TRISQUARE_1 | k-select all test cases with the tag TRISQUARE_1 |
+| pytest -m "TRISQUARE_1" | m-select all test cases with the marker TRISQUARE_1 |
