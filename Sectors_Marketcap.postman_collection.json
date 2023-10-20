@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "7f2ab58a-883b-47c9-88f0-439808e4ab10",
+		"name": "Sectors_Marketcap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29549878"
+	},
+	"item": [
+		{
+			"name": "Financials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/Financials/marketcap",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"Financials",
+						"marketcap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Materials",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/Materials/marketcap",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"Materials",
+						"marketcap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Care",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/Health Care/marketcap",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"Health Care",
+						"marketcap"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Communication Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors/Communication Services/marketcap",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors",
+						"Communication Services",
+						"marketcap"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}	

@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "78cf90e0-3c3d-4f79-a06f-004b3ca74bc4",
+		"name": "Sectors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29549878"
+	},
+	"item": [
+		{
+			"name": "Displays all 11 sectors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/sectors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"sectors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
