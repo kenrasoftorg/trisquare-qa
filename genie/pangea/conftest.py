@@ -1,5 +1,4 @@
 import pytest
-import requests
 
 @pytest.fixture()
 def pangea_dev():
@@ -10,7 +9,6 @@ def pangea_dev():
         "host": host,
         "port": port,
     }
-
 
 @pytest.fixture(autouse=True)
 def pangea_url(pangea_dev):
