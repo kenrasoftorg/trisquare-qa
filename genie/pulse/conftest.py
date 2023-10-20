@@ -1,20 +1,23 @@
 import pytest
-import psycopg2
-from pytest_postgresql import factories
+from sqlalchemy import create_engine, text
 
-# Define a PostgreSQL factory fixture
-postgresql = factories.postgresql('postgresql://username:password@localhost/dbname')
+@pytest.fixture()
+def pulse_dev():
+    db_host = "127.0.0.1"
+    db_port = 5432
+    db_user = "postgres"
+    db_passwd = "Kenra123"
+    db_schema = "pulse"
 
-# Define a pytest fixture for database connection
-@pytest.fixture(scope='function')
-def database_connection(postgresql):
-    dsn = postgresql.dsn()
-    conn = psycopg2.connect(
-        host=dsn['host'],
-        port=dsn['port'],
-        user=dsn['user'],
-        password=dsn['password'],
-        database=dsn['database']
-    )
-    yield conn
-    conn.close()
+    db_url = f"postgresql://{db_user}:{db_passwd}@{db_host}:{db_port}/{db_schema}"
+    return db_url
+
+
+# Pytest fixture to create a database connection
+@pytest.fixture(autouse=True)
+def db_connection(pulse_dev):
+    engine = create_engine(pulse_dev)
+    connection = engine.connect()
+    
+    yield connection
+    connection.close()

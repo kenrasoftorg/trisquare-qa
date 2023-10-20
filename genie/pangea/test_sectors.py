@@ -3,8 +3,8 @@ import requests
 
 @pytest.mark.TRISQUARE_1
 @pytest.mark.Regression
-def test_fetch_sectors_api(pulse_url):
-    api = f"{pulse_url}/sectors"
+def test_fetch_sectors_api(pangea_url):
+    api = f"{pangea_url}/sectors"
     response = requests.get(api) # Displays all sectors names
 
     # Check that the API response was successful

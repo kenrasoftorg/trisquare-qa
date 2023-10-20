@@ -2,8 +2,8 @@ import pytest
 import requests
 
 @pytest.fixture()
-def dev_environment():
-    host = "localhost"
+def pangea_dev():
+    host = "127.0.0.1"
     port = 5000
 
     return {
@@ -13,5 +13,5 @@ def dev_environment():
 
 
 @pytest.fixture(autouse=True)
-def pulse_url(dev_environment):
-    return f"http://{dev_environment['host']}:{dev_environment['port']}"
+def pangea_url(pangea_dev):
+    return f"http://{pangea_dev['host']}:{pangea_dev['port']}"
