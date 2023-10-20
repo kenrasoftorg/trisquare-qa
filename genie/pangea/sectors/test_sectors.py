@@ -117,27 +117,30 @@ def test_marketcaps_api(pangea_url):
     
     # asserting all marketcapital amounts
     assert "Communication Services" in json_data
-    assert (int((json_data["Communication Services"]).replace("$", "").replace(",", "")) >= 11110887050278 )
+    assert str_to_int(json_data["Communication Services"]) >= 11110887050278 
     assert "Consumer Discretionary" in json_data
-    assert (int((json_data["Consumer Discretionary"]).replace("$", "").replace(",", "")) >= 8712598584215 )
+    assert str_to_int(json_data["Consumer Discretionary"]) >= 8712598584215 
     assert "Consumer Staples" in json_data
-    assert (int((json_data["Consumer Staples"]).replace("$", "").replace(",", "")) >= 5485862185868 )
+    assert str_to_int(json_data["Consumer Staples"]) >= 5485862185868 
     assert "Energy" in json_data
-    assert (int((json_data["Energy"]).replace("$", "").replace(",", "")) >= 3460545260769 )
+    assert str_to_int(json_data["Energy"]) >= 3460545260769 
     assert "Financials" in json_data
-    assert (int((json_data["Financials"]).replace("$", "").replace(",", "")) >= 10293691080173 )
+    assert str_to_int(json_data["Financials"]) >= 10293691080173 
     assert "Health Care" in json_data
-    assert (int((json_data["Health Care"]).replace("$", "").replace(",", "")) >= 10112231175015 )
+    assert str_to_int(json_data["Health Care"]) >= 10112231175015 
     assert "Industrials" in json_data
-    assert (int((json_data["Industrials"]).replace("$", "").replace(",", "")) >= 6421389823258 )
+    assert str_to_int(json_data["Industrials"]) >= 6421389823258 
     assert "Information Technology" in json_data
-    assert (int((json_data["Information Technology"]).replace("$", "").replace(",", "")) >= 21009586012712 )
+    assert str_to_int(json_data["Information Technology"]) >= 21009586012712 
     assert "Materials" in json_data
-    assert (int((json_data["Materials"]).replace("$", "").replace(",", "")) >= 1834514784053 )
+    assert str_to_int(json_data["Materials"]) >= 1834514784053 
     assert "Real Estate" in json_data
-    assert (int((json_data["Real Estate"]).replace("$", "").replace(",", "")) >= 1811268538673 )
+    assert str_to_int(json_data["Real Estate"]) >= 1811268538673 
     assert "Utilities" in json_data
-    assert (int((json_data["Utilities"]).replace("$", "").replace(",", "")) >= 1829621911358 )
+    assert str_to_int(json_data["Utilities"]) >= 1829621911358 
+
+def str_to_int(currency):
+    return int(currency.replace("$", "").replace(",", ""))
 
 @pytest.mark.TRISQUARE_31
 def test_marketcap_api_systemerror(pangea_url):

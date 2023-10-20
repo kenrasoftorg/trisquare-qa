@@ -21,3 +21,19 @@ def db_connection(pulse_dev):
     
     yield connection
     connection.close()
+
+@pytest.fixture()
+def sector_subsector_count():
+    return {
+        "Communication Services":9,
+        "Consumer Discretionary":19,
+        "Consumer Staples":12,
+        "Energy":5,
+        "Financials":13,
+        "Health Care":10,
+        "Industrials":19,
+        "Information Technology":12,
+        "Materials":11,
+        "Real Estate":13,
+        "Utilities":5
+    }
