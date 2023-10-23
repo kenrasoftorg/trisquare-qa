@@ -53,7 +53,7 @@ def test_load_dowjones_count(db_connection: Connection):
 
 @pytest.mark.TRISQUARE_11
 def test_load_dowjones_sector(db_connection: Connection):
-    sql_query = "select distinct sector from public.dowjones ;;"
+    sql_query = "select distinct sector from public.dowjones;"
     result = db_connection.execute(text(sql_query))
     sectors = result.fetchall()
     
@@ -65,8 +65,8 @@ def test_load_dowjones_sector(db_connection: Connection):
     # Check the sector names
     sector_names = [sector[0] for sector in sectors]
     expected_sector_names = ['Healthcare', 'Basic Materials', 'Energy','Consumer Cyclical','Industrials','Consumer Defensive','Financial Services','Technology','Communication Services']  # Replace with your expected sector names
-    # for name in expected_sector_names:
-    #     assert name in sector_names
+    for name in expected_sector_names:
+        assert name in sector_names
 
 @pytest.mark.TRISQUARE_14
 def test_load_dowjones_subsectorcount(db_connection: Connection):
