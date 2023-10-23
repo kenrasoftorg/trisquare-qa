@@ -26,7 +26,7 @@ def test_validate_sector_count(db_connection):
 def test_validate_subsector_count(db_connection,sector_subsector_count):
     sql_query= f"SELECT sector, COUNT(DISTINCT subsector) AS subsector_count from nasdaq group by sector"
     rows = db_connection.execute(text(sql_query))
-    assert sector_subsector_count;11
+    assert sector_subsector_count==11
    
 @pytest.mark.TRISQUARE_46
 def test_null_values(db_connection):
