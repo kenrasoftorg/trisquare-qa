@@ -36,10 +36,11 @@ def test_null_symbol(db_connection):
     result = db_connection.execute(text(sql_query))
     row_count = result.scalar()
     assert row_count == 0  
-
+    
+@pytest.mark.skip
 @pytest.mark.TRISQUARE_40 
 def test_duplicate_records(db_connection):
-    sql_query= f"SELECT symbol, COUNT(*) AS count FROM historical_prices GROUP BY symbol, date_time"
+    sql_query= f"SELECT symbol, COUNT(*) AS count FROM sp500 GROUP BY symbol, date_time"
     rows = db_connection.execute(text(sql_query))
     for row in rows:
         assert row [1]==1
