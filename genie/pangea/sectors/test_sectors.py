@@ -1,7 +1,7 @@
+from unittest.mock import Mock, patch
 import pytest
 import requests
-from unittest import mock
-from unittest.mock import Mock, patch
+# from unittest import mock
 
 @pytest.mark.TRISQUARE_1
 @pytest.mark.Regression
@@ -11,6 +11,7 @@ def test_fetch_sectors_api(pangea_url):
 
     # Check that the API response was successful
     assert response.status_code == 200
+
     
     data = response.json()
     num_of_sectors = len(data)
