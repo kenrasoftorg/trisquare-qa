@@ -11,8 +11,6 @@ def test_fetch_sectors_api(pangea_url):
 
     # Check that the API response was successful
     assert response.status_code == 200
-
-    
     data = response.json()
     num_of_sectors = len(data)
     assert num_of_sectors == 11
