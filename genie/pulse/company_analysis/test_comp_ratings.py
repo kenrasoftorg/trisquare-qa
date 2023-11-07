@@ -1,6 +1,7 @@
 import pytest
 from sqlalchemy import create_engine, text
 
+
 @pytest.mark.TRISQUARE_130
 def test_load_comp_ratings(db_connection):
     sql_query = f"select * from public.comp_ratings"
@@ -35,9 +36,7 @@ def test_duplicate_values(db_connection):
     # asserting symbol count is equal to  1 on any particular day.
     # If it is more than 1 means it's a duplicate record.
     for row in rows:
-        assert row [1]==1
-
-
+      assert row [1]==1
 
 
 @pytest.mark.TRISQUARE_137
@@ -48,8 +47,10 @@ def test_load_comp_ratings_date(db_connection):
     assert row_count == 505
 
 
-
-
-
-
+@pytest.mark.TRISQUARE_138
+def test_validate_6months_data(db_connection):
+    sql_query= f"SELECT count (*) FROM comp_ratings WHERE date_time  >= NOW() - INTERVAL '6 months'"
+    result = db_connection.execute(text(sql_query))
+    row_count = result.scalar()
+    assert row_count >= 497
 
