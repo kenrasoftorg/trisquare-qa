@@ -22,12 +22,7 @@ def test_load_comp_estimates_count(db_connection):
     row_count = result.scalar()
     assert row_count >= 10334
 
-@pytest.mark.TRISQUARE_122
-def test_load_comp_estimates_null(db_connection):
-    sql_query = f"select count(symbol) from comp_estimates where symbol=null"
-    result = db_connection.execute(text(sql_query))
-    row_count = result.scalar()
-    assert row_count ==0
+
 
 @pytest.mark.TRISQUARE_123
 def test_load_comp_estimates_symbol(db_connection):
